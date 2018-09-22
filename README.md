@@ -2,7 +2,9 @@
 A calculator program using Java Swing as the GUI.
 
 ## Download
-No, not yet.. I haven't figure out how to release the app just yet.
+Yeay, my first ever github release is up! (22 Sept 2018 at 3am. What is life, huh? :P)
+
+:package: [Download .jar](https://github.com/hilmihisham/Calculator/releases/download/v1.1/Calculator.jar)
 
 ![Screenshot](https://user-images.githubusercontent.com/30010044/45915003-23860d80-be02-11e8-9746-1495d90e5d03.png) Screenshot of the app after Update 2
 
