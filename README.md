@@ -17,9 +17,10 @@ This is actually the first project for my COMP 585 - GUI class. The project was 
 ## Project Updates
 - Initial commit (18 Sept 2018)
   - Initial project finished, with all basic functionality implemented.
-- Update 2 (22 Sept 2018)
+- Update 2 (21 Sept 2018)
   - Adding color and updating the looks of the calculator.
   - Adding another text box to display the inputted number before the operand.
   - JUnit is still not working, unfortunately.
 - Update 2.1 (22 Sept 2018)
   - Refresh the looks of About menu.
+  - Built the .jar application for this version.
