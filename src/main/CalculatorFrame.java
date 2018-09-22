@@ -59,9 +59,9 @@ public class CalculatorFrame extends JFrame {
         mainTextField.setPreferredSize(new Dimension(FRAME_WIDTH-20, TEXTFIELD_HEIGHT));
         mainTextField.setFont(new Font("Calibri", Font.BOLD, 70));
         mainTextField.setHorizontalAlignment(JTextField.RIGHT);
-        //mainTextField.setEditable(false);
     }
 
+    // updating the main text field
     public static void updateTextField() {
         if (input2.equals(""))
             mainTextField.setText(input1 + inputoperand);
