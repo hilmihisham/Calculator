@@ -56,7 +56,9 @@ public class CalculatorMenu extends JMenuBar {
 
     private void aboutActionPerformed() {
 
-        JLabel aboutText = new JLabel("Created by @hilmihisham");
+        String text = "<html>Created by @hilmihisham<br>Update 2.1, 22-Sept-18</html>";
+
+        JLabel aboutText = new JLabel(text);
         aboutText.setFont(new Font("Calibri", Font.PLAIN, 25));
 
         JOptionPane.showMessageDialog(Main.frame, aboutText,"About", JOptionPane.INFORMATION_MESSAGE);
