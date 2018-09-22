@@ -5,20 +5,35 @@ package main;
  */
 public class Solver {
 
-    private Double in1, in2, total;
+    private float in1, in2, total;
     private String operand;
 
     // constructor
     public Solver() {
-        this.in1 = Double.parseDouble(CalculatorFrame.input1);
-        this.in2 = Double.parseDouble(CalculatorFrame.input2);
+
+        try {
+            this.in1 = Float.parseFloat(CalculatorFrame.input1);
+        }
+        catch (NullPointerException npe) {
+            this.in1 = 0;
+        }
+
+        try {
+            this.in2 = Float.parseFloat(CalculatorFrame.input2);
+        }
+        catch (NullPointerException npe) {
+            this.in2 = 0;
+        }
+
+        //this.in1 = Float.parseFloat(CalculatorFrame.input1);
+        //this.in2 = Float.parseFloat(CalculatorFrame.input2);
         this.operand = CalculatorFrame.inputoperand;
 
         total = solveInput(in1, operand, in2);
     }
 
-    public Double solveInput(Double input1, String op, Double input2) {
-        double answer = 0.0;
+    public float solveInput(float input1, String op, float input2) {
+        float answer = 0.0f;
 
         if (op.charAt(0) == '+') {
             answer =  in1 + in2;
@@ -39,7 +54,7 @@ public class Solver {
         return answer;
     }
 
-    public Double getTotal() {
+    public float getTotal() {
         return total;
     }
 

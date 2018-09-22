@@ -9,13 +9,14 @@ import java.awt.event.KeyListener;
  */
 public class CalculatorFrame extends JFrame {
 
-    private static final int FRAME_WIDTH = 400;
-    private static final int FRAME_HEIGHT = 750;
+    private static final int FRAME_WIDTH = 500;
+    private static final int FRAME_HEIGHT = 900;
 
     private static final int TEXTFIELD_HEIGHT = 150;
 
     private JPanel panel;
-    private static JTextField textField;
+    private static JTextField buffertextField;
+    private static JTextField mainTextField;
 
     private KeyListener keyListener;
 
@@ -48,21 +49,40 @@ public class CalculatorFrame extends JFrame {
     }
 
     private void createTextField() {
-        textField = new JTextField();
-        textField.setPreferredSize(new Dimension(FRAME_WIDTH-20, TEXTFIELD_HEIGHT));
-        textField.setFont(new Font("Calibri", Font.BOLD, 80));
-        //textField.setEditable(false);
+        buffertextField = new JTextField();
+        buffertextField.setPreferredSize(new Dimension(FRAME_WIDTH-20, 60));
+        buffertextField.setFont(new Font("Calibri", Font.BOLD, 35));
+        buffertextField.setHorizontalAlignment(JTextField.RIGHT);
+        buffertextField.setEditable(false);
+
+        mainTextField = new JTextField();
+        mainTextField.setPreferredSize(new Dimension(FRAME_WIDTH-20, TEXTFIELD_HEIGHT));
+        mainTextField.setFont(new Font("Calibri", Font.BOLD, 70));
+        mainTextField.setHorizontalAlignment(JTextField.RIGHT);
+        //mainTextField.setEditable(false);
     }
 
     public static void updateTextField() {
-        textField.setText(input1 + inputoperand + input2);
+        if (input2.equals(""))
+            mainTextField.setText(input1 + inputoperand);
+        else
+            mainTextField.setText(input2);
+    }
+
+    // update is false only if the = was pressed, erasing all the text in the field
+    public static void updateBufferText(boolean update) {
+        if (update)
+            buffertextField.setText(input1 + " " + inputoperand);
+        else
+            buffertextField.setText("");
     }
 
     private void createPanel() {
         panel = new JPanel();
 
         // adding all GUI onto panel
-        panel.add(textField);
+        panel.add(buffertextField);
+        panel.add(mainTextField);
 
         // add buttons
         panel.add(new CalculatorButton("C").getButton());
