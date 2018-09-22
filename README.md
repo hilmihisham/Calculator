@@ -15,9 +15,11 @@ Also, the '%' button works as a mod, rather than percentage.
 This is actually the first project for my COMP 585 - GUI class. The project was due on 18 Sept 2018 and was already finished by then (for all the required functionality for the project), but I'm still continuing this project after that - adding more functionality, updating the looks, and etc etc mostly for fun. 
 
 ## Project Updates
-1. 18 Sept 2018
-   - Initial project finished, with all basic functionality implemented.
-2. 22 Sept 2018
-   - Adding color and updating the looks of the calculator.
-   - Adding another text box to display the inputted number before the operand.
-   - JUnit is still not working, unfortunately.
+- Initial commit (18 Sept 2018)
+  - Initial project finished, with all basic functionality implemented.
+- Update 2 (22 Sept 2018)
+  - Adding color and updating the looks of the calculator.
+  - Adding another text box to display the inputted number before the operand.
+  - JUnit is still not working, unfortunately.
+- Update 2.1 (22 Sept 2018)
+  - Refresh the looks of About menu.
