@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21d49eaa-2845-44e2-acbe-217143121312" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CalculatorWithJUnit/test/CalculatorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CalculatorWithJUnit/test/CalculatorTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/CalculatorButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CalculatorButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/CalculatorFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CalculatorFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ClickAndKeyListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ClickAndKeyListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Solver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Solver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/CalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/CalculatorTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="21d49eaa-2845-44e2-acbe-217143121312" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -269,7 +261,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537601006993" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537602709244" />
     <property name="settings.editor.selected.configurable" value="Debugger_Data_Views_Java" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
