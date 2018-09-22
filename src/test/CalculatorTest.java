@@ -1,11 +1,10 @@
 package test;
 
-import main.Calculator;
+import main.Solver;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
-import main.Solver;
 import org.junit.Test;
 
 public class CalculatorTest {
@@ -18,8 +17,8 @@ public class CalculatorTest {
         */
 
         Solver solver = new Solver();
-        double sum = solver.solveInput(1.0, "+", 2.5);
-        assertEquals(3.5, sum);
+        float sum = solver.solveInput(1.0f, "+", 2.5f);
+        assertEquals(3.5f, sum);
     }
 
     /*

@@ -2,58 +2,17 @@ package main;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 /**
  * @author hilmi
  */
-public class ClickAndKeyListener implements ActionListener, KeyListener {
-
-    // ----- keyboard action -----
-
-    /**
-     * Invoked when a key has been typed.
-     * See the class description for {@link KeyEvent} for a definition of
-     * a key typed event.
-     *
-     * @param e
-     */
-    @Override
-    public void keyTyped(KeyEvent e) {
-        char c = e.getKeyChar();
-        System.out.println("-----\nKey pressed = " + c);
-        String s = String.valueOf(c);
-        System.out.println("valueOf s = " + s + "\n-----");
-
-    }
-
-    /**
-     * Invoked when a key has been pressed.
-     * See the class description for {@link KeyEvent} for a definition of
-     * a key pressed event.
-     *
-     * @param e
-     */
-    @Override
-    public void keyPressed(KeyEvent e) {}
-
-    /**
-     * Invoked when a key has been released.
-     * See the class description for {@link KeyEvent} for a definition of
-     * a key released event.
-     *
-     * @param e
-     */
-    @Override
-    public void keyReleased(KeyEvent e) {}
+public class ClickAndKeyListener implements ActionListener {
 
     // ----- click action -----
 
     /**
      * Invoked when an action occurs.
      *
-     * @param e
      */
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -121,15 +80,24 @@ public class ClickAndKeyListener implements ActionListener, KeyListener {
 
             // reset flag for .
             CalculatorFrame.dot1 = CalculatorFrame.dot2 = true;
+
+            // erasing bufferTextField
+            CalculatorFrame.updateBufferText(false);
         }
         // delete button clicked (only works if there's something in the string)
         else if (s.charAt(0) == '<') {
             if (CalculatorFrame.inputoperand.isEmpty() && !CalculatorFrame.input1.isEmpty()) {
 
                 // reset . flag if we erased . instead of number
-                if (CalculatorFrame.input1.endsWith("."))
+                if (CalculatorFrame.input1.endsWith(".")) {
                     CalculatorFrame.dot1 = true;
-                    // if input1 was infinity
+
+                    // erase last input
+                    CalculatorFrame.input1 =
+                            CalculatorFrame.input1.substring(0, CalculatorFrame.input1.length()-1);
+                    System.out.println("new input1 = " + CalculatorFrame.input1);
+                }
+                // if input1 was infinity
                 else if (CalculatorFrame.input1.endsWith("y") || CalculatorFrame.input1.endsWith("N")) {
                     CalculatorFrame.input1 = "";
                     CalculatorFrame.dot1 = true;
@@ -163,6 +131,9 @@ public class ClickAndKeyListener implements ActionListener, KeyListener {
                 // if operand was pressed and input1 is empty
                 if (CalculatorFrame.input1.isEmpty())
                     CalculatorFrame.input1 = "0";
+
+                // updating bufferTextInput to display 1st input and the operand
+                CalculatorFrame.updateBufferText(true);
             }
             if (s.charAt(0) == '-') {
                 CalculatorFrame.inputoperand = "-";
@@ -171,6 +142,9 @@ public class ClickAndKeyListener implements ActionListener, KeyListener {
                 // if operand was pressed and input1 is empty
                 if (CalculatorFrame.input1.isEmpty())
                     CalculatorFrame.input1 = "0";
+
+                // updating bufferTextInput to display 1st input and the operand
+                CalculatorFrame.updateBufferText(true);
             }
             if (s.charAt(0) == 'x') {
                 CalculatorFrame.inputoperand = "*";
@@ -179,6 +153,9 @@ public class ClickAndKeyListener implements ActionListener, KeyListener {
                 // if operand was pressed and input1 is empty
                 if (CalculatorFrame.input1.isEmpty())
                     CalculatorFrame.input1 = "0";
+
+                // updating bufferTextInput to display 1st input and the operand
+                CalculatorFrame.updateBufferText(true);
             }
             if (s.charAt(0) == '÷') {
                 CalculatorFrame.inputoperand = "/";
@@ -187,6 +164,9 @@ public class ClickAndKeyListener implements ActionListener, KeyListener {
                 // if operand was pressed and input1 is empty
                 if (CalculatorFrame.input1.isEmpty())
                     CalculatorFrame.input1 = "0";
+
+                // updating bufferTextInput to display 1st input and the operand
+                CalculatorFrame.updateBufferText(true);
             }
             if (s.charAt(0) == '%') {
                 CalculatorFrame.inputoperand = "%";
@@ -195,6 +175,9 @@ public class ClickAndKeyListener implements ActionListener, KeyListener {
                 // if operand was pressed and input1 is empty
                 if (CalculatorFrame.input1.isEmpty())
                     CalculatorFrame.input1 = "0";
+
+                // updating bufferTextInput to display 1st input and the operand
+                CalculatorFrame.updateBufferText(true);
             }
             if (s.charAt(0) == '=') {
                 if (!CalculatorFrame.input1.isEmpty() && !CalculatorFrame.input2.isEmpty()
@@ -215,9 +198,11 @@ public class ClickAndKeyListener implements ActionListener, KeyListener {
 
                     // reset flag for dot2 (dot1 handled in solver)
                     CalculatorFrame.dot2 = true;
-
                     System.out.println("dot 1 = " + CalculatorFrame.dot1);
                     System.out.println("dot 2 = " + CalculatorFrame.dot2);
+
+                    // erasing bufferTextField
+                    CalculatorFrame.updateBufferText(false);
                 }
             }
         }
